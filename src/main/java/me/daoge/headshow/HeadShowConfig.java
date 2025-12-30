@@ -18,7 +18,7 @@ public class HeadShowConfig extends OkaeriConfig {
 
     @Comment("Scoretag format. Supports PlaceholderAPI variables.")
     @CustomKey("scoretag")
-    private String scoreTag = "{player_health} §c❤";
+    private String scoreTag = "{ping}§ams";
 
     @Comment("Update interval in ticks (20 ticks = 1 second).")
     @CustomKey("update-interval")
