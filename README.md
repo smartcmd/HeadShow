@@ -1,56 +1,38 @@
-# Allay Java Plugin Template
+# HeadShow
 
-Welcome to the java plugin template for allay.
+HeadShow is an AllayMC plugin that customizes player nametags and scoretags using PlaceholderAPI.
 
-## Prerequisites
+## Requirements
 
-- Java21 or higher.
-- Allay installed.
+- Java 21 or higher
+- Allay server
+- PlaceholderAPI plugin
 
-## Getting Started
+## Installation
 
-1. **Clone this Repository**
-
-```bash
-git clone https://github.com/AllayMC/JavaPluginTemplate.git
-```
-   
-2. **Navigate to the Cloned Directory**
+1. Build the plugin:
 
 ```bash
-cd JavaPluginTemplate
-```
-   
-3. **Change Plugin Information**
-
-- Rename package name from `org.allaymc.javaplugintemplate` to `your.group.name.and.pluginname`
-- Update [build.gradle.kts](build.gradle.kts) and [settings.gradle.kts](settings.gradle.kts)
-- Reload gradle
-   
-4. **Build and Run Your Plugin**
-
-```bash
-gradlew shadowJar
-```
-   
-This command will produce a `.jar` file in the `build/libs` directory. 
-Copy the `.jar` file to the `plugins` directory of your allay server.
-Start the allay server and check the logs to ensure your plugin loads and operates
-as expected.
-
-5. **Test Your Plugin in Gradle**
-
-```bash
-gradlew runServer
+./gradlew shadowJar
 ```
 
-This command will start an allay server with your plugin loaded.
-Then close allay server by clicking `X` in the dashboard window.
+2. Copy the jar from `build/libs` into the server `plugins` directory.
+3. Install PlaceholderAPI and start the server.
 
-## Documentation
+## Configuration
 
-For a deeper dive into the Allay API and its functionalities, please refer to our [documentation](https://docs.allaymc.org) (WIP).
+`config.yml` is generated on first run.
 
-## License
+```yaml
+nametag: "{player_name}"
+scoretag: "{player_ping}ms"
+update-interval: 20
+```
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+- `nametag` and `scoretag` support PlaceholderAPI variables.
+- `update-interval` is in ticks (20 ticks = 1 second).
+- Set `nametag` or `scoretag` to an empty string to clear it.
+
+## Development
+
+- `./gradlew runServer` to start a local server with the plugin.

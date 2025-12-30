@@ -1,2 +1,1 @@
-rootProject.name = "JavaPluginTemplate"
-
+rootProject.name = "HeadShow"
